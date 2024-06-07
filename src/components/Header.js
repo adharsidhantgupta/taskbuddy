@@ -10,6 +10,7 @@ const Header = () => {
     document.documentElement.removeAttribute("class");
     document.documentElement.classList.add(theme);
   }, [theme]);
+  // This pattern is useful for dynamically switching themes, such as between light and dark mode, in a React application
 
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(theme));

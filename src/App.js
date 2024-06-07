@@ -8,11 +8,18 @@ function App() {
   const [tasklist, setTasklist] = useState(
     JSON.parse(localStorage.getItem("tasklist")) || []
   );
+
+  // useState is a React Hook that allows you to add state to functional components. It returns an array with two elements: the current state value and a function to update that state.
+  // JSON.parse(...) converts the string to a JavaScript object.
+
   const [task, setTask] = useState({});
 
   useEffect(() => {
     localStorage.setItem("tasklist", JSON.stringify(tasklist));
   }, [tasklist]);
+  // useEffect is a React Hook that allows you to perform side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM. It runs after the first render and after every update.
+
+  // JSON.stringify(tasklist) converts the tasklist array into a JSON string because localStorage can only store strings.
 
   return (
     <div className="parent">
@@ -38,3 +45,5 @@ function App() {
 }
 
 export default App;
+
+// React Hooks enable functional components to manage state, perform side effects, access context, and handle other React functionalities that were previously only possible in class components.
